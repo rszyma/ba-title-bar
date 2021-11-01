@@ -2,7 +2,7 @@ import time
 import pyglet
 import multiprocessing
 import cv2
-import simpleaudio as sa
+# import simpleaudio as sa
 
 # 48 x 36
 PIXELS_WIDTH = 48
@@ -20,8 +20,6 @@ def create_window(queue, i):
         for window in pyglet.app.windows:
             window.switch_to()  # idk if these 4 lines are even necessary; didn't test it
             window.dispatch_events()
-            window.dispatch_event('on_draw')
-            window.flip()
 
             msg = queue.get()
             line = "".join([PIXEL_ON if val else PIXEL_OFF for val in msg])
@@ -74,7 +72,7 @@ def main():
             cv2.destroyAllWindows()
             cap.release()
             break
-        print("FPS: ", 1 / (time.time() - frame_start))
+        print("FPS: ", int(1 / (time.time() - frame_start)))
 
 if __name__ == "__main__":
     main()
