@@ -3,7 +3,9 @@ import cv2
 # used to scale down the video resolution
  
 # the repo doesn't include vid 480x360 file, 
-# but you can get if from https://www.youtube.com/watch?v=FtutLA63Cp8
+# but you can get it yourself e.g. using this youtube-dl command:
+# youtube-dl -f 18 'https://www.youtube.com/watch?v=FtutLA63Cp8' -o bad_apple_480x360.mp4
+
 cap = cv2.VideoCapture('bad_apple_480x360.mp4')
 
 fourcc = cv2.VideoWriter_fourcc(*'MP4V')
