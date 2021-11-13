@@ -18,7 +18,6 @@ def create_window(queue, i):
         pyglet.clock.tick()
 
         for window in pyglet.app.windows:
-            window.switch_to()
             window.dispatch_events()
 
             msg = queue.get()
