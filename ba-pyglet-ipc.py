@@ -71,7 +71,11 @@ def main():
             cv2.destroyAllWindows()
             cap.release()
             break
-        print("FPS: ", int(1 / (time.time() - frame_start)))
+        try:
+            print("FPS: ", int(1 / (time.time() - frame_start)))
+        except ZeroDivisionError:
+            pass
+            
 
 if __name__ == "__main__":
     main()
